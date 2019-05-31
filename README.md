@@ -1,6 +1,10 @@
 # EscapeFromMaze
 Escape from maze console game. Multithread, keylistener and signals used.
 
+
+<h3>Screen Photo</h3>
+<img src = "consolePhoto.png">
+
 There two monsters doing same thing all the time updown monster and right left monster.Same working mechanism for each 
 if you see wall go left or if you see wall go right.Same for updown monster. <br>
 And the real monster(SLEEEEEEPY MONSTER) knows your location if you close enough to him he will wake up and start to chase you!!!<br>
