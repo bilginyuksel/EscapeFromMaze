@@ -17,6 +17,5 @@ If you use Linux
 >> ./game
 ```
 <h3>Screen Photo</h3>
-<p align="center">
 <img src = "consoleimage.png" >
-  </p>
+  
