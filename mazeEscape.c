@@ -336,7 +336,7 @@ void *controlMonster(){
 }
 void *wake_up_monster(){
 	while(1){
-			usleep(300000);
+			usleep(500000);
 			int direction = rand()%2; //x= 0, y= 1
 			int distance = sqrt(pow(c.x-mS.x,2) + pow(c.y-mS.y,2));
 			if(distance<=1){
@@ -346,33 +346,37 @@ void *wake_up_monster(){
 
 
 			if(c.x< mS.x){
-				if(outline[mS.x-1][mS.y]==FLOOR){
+				if(outline[mS.x-1][mS.y]!=WALL){
 					outline[mS.x][mS.y] = FLOOR;
 					outline[mS.x-1][mS.y] = MONSTERSLEEPY;
 				}
 			}else if(c.x>mS.x){
-					if(outline[mS.x+1][mS.y]==FLOOR){
+					if(outline[mS.x+1][mS.y]!=WALL){
 						outline[mS.x][mS.y] = FLOOR;
 						outline[mS.x+1][mS.y] = MONSTERSLEEPY;
 				}
 			}
-			usleep(300000);
+      loadMap(outline);
+      drawMap();
+			usleep(500000);
 			if(c.y< mS.y){
-				if(outline[mS.x][mS.y-1]==FLOOR){
+				if(outline[mS.x][mS.y-1]!=WALL){
 					outline[mS.x][mS.y] = FLOOR;
 					outline[mS.x][mS.y-1] = MONSTERSLEEPY;
 				}
 			}else if(c.y>mS.y){
-					if(outline[mS.x][mS.y+1]==FLOOR){
+					if(outline[mS.x][mS.y+1]!=WALL){
 						outline[mS.x][mS.y] = FLOOR;
 						outline[mS.x][mS.y+1] = MONSTERSLEEPY;
 				}
 			}
+      loadMap(outline);
+      drawMap();
 
 
 
 
-			loadMap(outline);
+
 	}
 	return NULL;
 }
@@ -380,7 +384,7 @@ void *wake_up_monster(){
 int wakeMonsterUp(){
 	//control if character is enough close to monster or not
 	int distance = sqrt(pow(c.x-mS.x,2) + pow(c.y-mS.y,2));
-	if(distance<5) return 1;
+	if(distance<9) return 1;
 
 	return -1;
 }
