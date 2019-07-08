@@ -4,6 +4,8 @@
  W-A-S-D for play if monsters catch you you will dead.
  if you can go * sign YOu WON THE GAME !!!
  HAVE FUN !
+
+Trying something new
  */
 
 #include <stdio.h>
